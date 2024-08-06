@@ -1,0 +1,2 @@
+tar: @version@:.
+copy: oh-my-zsh-20240806.7337-alt-config.patch

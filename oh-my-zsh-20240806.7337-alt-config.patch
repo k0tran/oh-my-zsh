@@ -1,0 +1,40 @@
+--- a/zshrc	2024-07-23 14:00:53.483723056 +0300
++++ b/zshrc	2024-07-24 17:10:37.607433351 +0300
+@@ -2,7 +2,7 @@
+ # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+ # Path to your Oh My Zsh installation.
+-export ZSH=$HOME/.oh-my-zsh
++ZSH=/usr/share/oh-my-zsh/
+
+ # Set name of the theme to load --- if set to "random", it will
+ # load a random theme each time Oh My Zsh is loaded, in which case,
+@@ -24,7 +24,7 @@
+ # HYPHEN_INSENSITIVE="true"
+
+ # Uncomment one of the following lines to change the auto-update behavior
+-# zstyle ':omz:update' mode disabled  # disable automatic updates
++zstyle ':omz:update' mode disabled  # disable automatic updates
+ # zstyle ':omz:update' mode auto      # update automatically without asking
+ # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+@@ -72,8 +72,6 @@
+ # Add wisely, as too many plugins slow down shell startup.
+ plugins=(git)
+
+-source $ZSH/oh-my-zsh.sh
+-
+ # User configuration
+
+ # export MANPATH="/usr/local/man:$MANPATH"
+@@ -102,3 +100,10 @@
+ # Example aliases
+ # alias zshconfig="mate ~/.zshrc"
+ # alias ohmyzsh="mate ~/.oh-my-zsh"
++
++ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
++if [[ ! -d $ZSH_CACHE_DIR ]]; then
++  mkdir $ZSH_CACHE_DIR
++fi
++
++source $ZSH/oh-my-zsh.sh
